@@ -1,4 +1,4 @@
-import { useContext, useEffect,} from "react";
+import { useContext, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { GlobalContext } from "./context/GlobalState";
@@ -23,6 +23,7 @@ function App() {
   return (
     <Router>
       <div className="container">
+        <div className="title">Budgetify</div>
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
         <Route path="/" exact component={Dashboard} />

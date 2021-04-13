@@ -9,7 +9,7 @@
 }
 
 body {
-  background-color: #f7f7f7;
+  background-color: ##f7f7f7;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,15 +24,28 @@ body {
   width: 350px;
 }
 
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 40px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #555;
+}
+
 .dashboard-header {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 h1 {
   letter-spacing: 1px;
   margin: 0;
   margin-bottom: 10px;
+}
+
+h2 {
+  font-weight: normal;
 }
 
 h3 {
@@ -102,10 +115,27 @@ input[type="number"] {
   border: 0;
   display: block;
   font-size: 16px;
-  margin: 10px 0 30px;
+  margin: 25px 0 30px;
   padding: 10px;
   width: 100%;
+  transition: all 0.4s;
 }
+
+.btn:hover {
+  /* transform: translateY(-1px); */
+  opacity: .8;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+.btn:active {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.btn:focus,
+.delete-btn:focus,
+.btn-link:focus {
+  outline: 0;
+}
+
 .btn-inline {
   display: inline-block;
   width: fit-content;
@@ -122,12 +152,6 @@ input[type="number"] {
   margin: 0;
   cursor: pointer;
   font-size: 16px;
-}
-
-.btn:focus,
-.delete-btn:focus,
-.btn-link:focus {
-  outline: 0;
 }
 
 .list {
