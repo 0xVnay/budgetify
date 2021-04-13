@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+:root {
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.container {
+  margin: 30px auto;
+  width: 350px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  letter-spacing: 1px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+h3 {
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 10px;
+  margin: 40px 0 10px;
+}
+
+h4 {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.inc-exp-container {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.inc-exp-container > div {
+  flex: 1;
+  text-align: center;
+}
+
+.inc-exp-container > div:first-of-type {
+  border-right: 1px solid #dedede;
+}
+
+.money {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+
+.money.plus {
+  color: #2ecc71;
+}
+
+.money.minus {
+  color: #c0392b;
+}
+
+label {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+  border: 1px solid #dedede;
+  border-radius: 2px;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: #9c88ff;
+  box-shadow: var(--box-shadow);
+  color: #fff;
+  border: 0;
+  display: block;
+  font-size: 16px;
+  margin: 10px 0 30px;
+  padding: 10px;
+  width: 100%;
+}
+.btn-inline {
+  display: inline-block;
+  width: fit-content;
+}
+
+.underline {
+  text-align: center;
+}
+
+.btn-link {
+  border: 0;
+  background-color: unset;
+  text-decoration: underline;
+  margin: 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn:focus,
+.delete-btn:focus,
+.btn-link:focus {
+  outline: 0;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.list li {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.list li.plus {
+  border-right: 5px solid #2ecc71;
+}
+
+.list li.minus {
+  border-right: 5px solid #c0392b;
+}
+
+.delete-btn {
+  cursor: pointer;
+  background-color: #e74c3c;
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 2px 5px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.list li:hover .delete-btn {
+  opacity: 1;
+}
+
+.error {
+  padding: 10px;
+  background-color: #feeaea;
+  border: 1px solid #fadadb;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+
+/* ------------- */
+/* Loader */
+/* ------------- */
+.loader {
+  position: relative;
+  padding-top: 200px;
+  width: 40px;
+  margin: auto;
+}
+.circle {
+  position: absolute;
+  width: 58px;
+  height: 58px;
+  opacity: 0;
+  transform: rotate(225deg);
+  animation-iteration-count: infinite;
+  animation-name: orbit;
+  animation-duration: 5.5s;
+}
+.circle:after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 5px;
+  background: #9c88ff; /* Pick a color */
+}
+
+.circle:nth-child(2) {
+  animation-delay: 240ms;
+}
+.circle:nth-child(3) {
+  animation-delay: 480ms;
+}
+.circle:nth-child(4) {
+  animation-delay: 720ms;
+}
+.circle:nth-child(5) {
+  animation-delay: 960ms;
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(225deg);
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+
+  7% {
+    transform: rotate(345deg);
+    animation-timing-function: linear;
+  }
+
+  30% {
+    transform: rotate(455deg);
+    animation-timing-function: ease-in-out;
+  }
+
+  39% {
+    transform: rotate(690deg);
+    animation-timing-function: linear;
+  }
+
+  70% {
+    transform: rotate(815deg);
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+
+  75% {
+    transform: rotate(945deg);
+    animation-timing-function: ease-out;
+  }
+
+  76% {
+    transform: rotate(945deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(945deg);
+    opacity: 0;
+  }
+}
